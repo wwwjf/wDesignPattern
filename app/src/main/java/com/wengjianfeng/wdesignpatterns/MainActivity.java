@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.wengjianfeng.wdesignpatterns.observable.Coder;
+import com.wengjianfeng.wdesignpatterns.observable.DevTechSite;
 import com.wengjianfeng.wdesignpatterns.singleton.Singleton1;
 import com.wengjianfeng.wdesignpatterns.singleton.Singleton2;
 import com.wengjianfeng.wdesignpatterns.singleton.Singleton3;
@@ -42,5 +44,26 @@ public class MainActivity extends AppCompatActivity {
         traffic2.calculatePrice(20);
 
         Toast.makeText(this, "二十公里：公交："+traffic1.calculatePrice(20)+",地铁："+traffic2.calculatePrice(20), Toast.LENGTH_SHORT).show();
+
+
+        //观察者模式
+
+        //被观察者
+        DevTechSite site = new DevTechSite();
+        //观察者
+        Coder coder01 = new Coder("coder-01");
+        Coder coder02 = new Coder("coder-02");
+        Coder coder03 = new Coder("coder-03");
+
+        //注册观察者到被观察者的观察列表中
+        site.addObserver(coder01);
+        site.addObserver(coder02);
+        site.addObserver(coder03);
+
+
+        //被观察者状态变化
+        site.postNewContent("2019-05-25周报更新啦");
+
+
     }
 }
