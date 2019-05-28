@@ -1,4 +1,4 @@
-# 单例模式
+# [单例模式](./app/src/main/java/com/wengjianfeng/wdesignpatterns/observable/单例模式.md)
 
 # 策略模式
 
