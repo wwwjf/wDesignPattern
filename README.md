@@ -2,4 +2,6 @@
 
 ## 策略模式
 
+## 建造者模式
+
 ## [观察者模式](./app/src/main/java/com/wengjianfeng/wdesignpatterns/observable/观察者模式.md)

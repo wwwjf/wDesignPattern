@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.wengjianfeng.wdesignpatterns.memento.CallofDuty;
+import com.wengjianfeng.wdesignpatterns.memento.CareTaker;
 import com.wengjianfeng.wdesignpatterns.observable.Coder;
 import com.wengjianfeng.wdesignpatterns.observable.DevTechSite;
 import com.wengjianfeng.wdesignpatterns.singleton.Singleton1;
@@ -64,6 +66,19 @@ public class MainActivity extends AppCompatActivity {
         //被观察者状态变化
         site.postNewContent("2019-05-25周报更新啦");
 
+        //备忘录模式
+
+        CallofDuty game = new CallofDuty();
+        //玩游戏
+        game.play();
+        CareTaker careTaker = new CareTaker();
+        //游戏归档
+        careTaker.archive(game.createMemoto());
+        //退出游戏
+        game.quit();
+        //恢复游戏
+        CallofDuty gameAgain = new CallofDuty();
+        gameAgain.restore(careTaker.getMemoto());
 
     }
 }
